@@ -5,7 +5,7 @@ import {
   FACES_BUFFER_ARRAY,
   VERTEX_POSITION_BUFFER_ARRAY,
 } from "./cube/buffers";
-import { mat4, vec3 } from "gl-matrix";
+import { mat4 } from "gl-matrix";
 
 interface CubeBuffers {
   color: WebGLBuffer;
@@ -160,15 +160,15 @@ class CubeRenderer {
 
   }
 
-  private onMouseDown(event: MouseEvent): void {
+  private onMouseDown(): void {
     this.clicked = true;
   }
 
-  private onMouseUp(event: MouseEvent): void {
+  private onMouseUp(): void {
     this.clicked = false;
   }
 
-  private onMouseLeave(event: MouseEvent): void {}
+  private onMouseLeave(): void {}
 
   private createCubeBuffer(): CubeBuffers {
     const gl = this.gl;
@@ -258,7 +258,7 @@ class CubeRenderer {
     gl.flush();
   }
 
-  private update(time: number) {
+  private update() {
     const gl = this.gl;
     const { attributesPtr, uniform_Matrixes, matrixes } = this;
 
